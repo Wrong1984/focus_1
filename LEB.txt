@@ -1,0 +1,1104 @@
+focus_tree = {
+    id = kon_focus
+ 
+    country = {
+        factor = 0
+
+        modifier = {
+            add = 10
+            tag = LEB #тег
+        } 
+    }
+
+    default = no
+        
+
+   
+focus = {
+		id = "LEB_1" 
+		icon = GFX_goal_unknown
+		
+		x = 7
+		y = 0
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+	continuous_focus_position = { x = 50 y = 1400 } (x по вертикали y по горизонтали)
+	focus = {
+		id = "LEB_2" 
+		icon = GFX_goal_unknown
+		
+		x = 14
+		y = 0
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+						add_political_power = 300
+					}
+	}
+	focus = {
+		id = "LEB_3" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_2" }
+		x = 15
+		y = 1
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+								random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+										type = arms_factory
+										level = 4
+										instant_build = yes
+									}
+							}
+					}
+	}
+	focus = {
+		id = "LEB_4" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_1" }
+		x = 6
+		y = 1
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+completion_reward = {
+	add_manpower = 10000
+					}
+	}
+	focus = {
+		id = "LEB_5" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_1" }
+		x = 8
+		y = 1
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_equipment_to_stockpile = {
+								type = infantry_equipment_1
+								amount = 20000
+								producer = LEB
+							}
+		}
+	}
+		focus = {
+		id = "LEB_6" 
+		icon = GFX_goal_unknown
+		
+		x = 25
+		y = 0
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_political_power = 100	
+		}
+	}
+			focus = {
+		id = "LEB_7" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_6" }
+		x = 20
+		y = 1
+		cost = 10
+		mutually_exclusive = { focus = "LEB_23"  }
+		mutually_exclusive = { focus = "LEB_24"  }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+    			ideology = esoteric_nazism
+  				  popularity = 0.10
+				}
+		}
+	}
+				focus = {
+		id = "LEB_8" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_4" }
+		x = 6
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		army_experience = 50
+			add_tech_bonus = {
+								name = land_doctrine_bonus
+								bonus = 1.0
+								uses = 4
+								category = land_doctrine
+							}
+		}
+	}
+					focus = {
+		id = "LEB_9" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_5" }
+		x = 8
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = infantry_weapons_bonus
+								bonus = 1.2
+								uses = 2
+								category = infantry_weapons
+							}
+	}
+	}
+	
+						focus = {
+		id = "LEB_9-1" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_9" }
+		x = 8
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		army_experience = 25
+			add_tech_bonus = {
+								name = infantry_artillery_bonus
+								bonus = 1.7
+								uses = 1
+								category = infantry_weapons
+								category = artillery
+							}
+		}
+		}
+	
+							focus = {
+		id = "LEB_10" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_8" }
+		x = 6
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = infantry_artillery_bonus
+								bonus = 0.7
+								uses = 3
+								category = infantry_weapons
+								category = artillery
+							}
+		}
+	}
+								focus = {
+		id = "LEB_11" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_10" }
+		x = 6
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		army_experience = 20
+			add_tech_bonus = {
+								name = land_doctrine_bonus
+								bonus = 1.0
+								uses = 2
+								category = land_doctrine
+							}
+		}
+	}
+									focus = {
+		id = "LEB_12" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_9-1" }
+		x = 8
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = infantry_weapons_bonus
+								bonus = 1.2
+								uses = 1
+								category = infantry_weapons
+							}
+		}
+	}
+										focus = {
+		id = "LEB_13" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_2" }
+		x = 13
+		y = 1
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = industrial_complex
+												size > 4
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = industrial_complex
+																				size > 4
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+										type = industrial_complex
+										level = 4
+										instant_build = yes
+									}
+							}
+		}
+	}
+											focus = {
+		id = "LEB_14" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_13" }
+		x = 13
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = industrial_complex
+												size > 4
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = industrial_complex
+																				size > 4
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 5
+								add_building_construction = {
+										type = industrial_complex
+										level = 5
+										instant_build = yes
+									}
+							}
+		}
+	}
+												focus = {
+		id = "LEB_15" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_13" }
+		x = 11
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+													focus = {
+		id = "LEB_16" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_15" }
+		x = 11
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = industrial_bonus
+								bonus = 1.0
+								uses = 5
+								category = industry
+							}
+		}
+	}
+														focus = {
+		id = "LEB_17" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_14" }
+		x = 13
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = industrial_bonus
+								bonus = 0.9
+								uses = 3
+								category = industry
+							}
+		}
+	}
+															focus = {
+		id = "LEB_18" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_17" }
+		x = 13
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+						random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = industrial_complex
+												size > 4
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = industrial_complex
+																				size > 4
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 9
+								add_building_construction = {
+										type = industrial_complex
+										level = 9
+										instant_build = yes
+									}
+							}
+		}
+	}
+																focus = {
+		id = "LEB_19" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_16" }
+		x = 11
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+																focus = {
+		id = "LEB_20" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_3" }
+		x = 15
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+					random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 7
+								add_building_construction = {
+										type = arms_factory
+										level = 7
+										instant_build = yes
+									}
+							}
+		}
+	}
+																	focus = {
+		id = "LEB_21" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_20" }
+		x = 15
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+					random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 8
+								add_building_construction = {
+										type = arms_factory
+										level = 8
+										instant_build = yes
+									}
+							}
+		}
+	}
+																		focus = {
+		id = "LEB_22" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_21" }
+		x = 15
+		y = 4
+		cost = 10
+		  
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+					random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 10
+								add_building_construction = {
+										type = arms_factory
+										level = 10
+										instant_build = yes
+									}
+							}
+		}
+	}
+																			focus = {
+		id = "LEB_23" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_6" }
+		x = 25
+		y = 1
+		cost = 10
+				mutually_exclusive = { focus = "LEB_7"  }
+		mutually_exclusive = { focus = "LEB_24"  }
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+								ideology = liberalism
+								popularity = 0.70
+							}
+							set_politics = {
+			ruling_party = liberalism
+			elections_allowed = no
+			}
+		}
+	}
+	focus = {
+		id = "LEB_24" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_6" }
+		x = 30
+		y = 1
+		cost = 10
+		
+				mutually_exclusive = { focus = "LEB_23"  }
+		mutually_exclusive = { focus = "LEB_7"  }
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+    			ideology = esoteric_nazism
+  				  popularity = 0.30
+				}
+		}
+	}focus = {
+			id = "LEB_25" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_24" }
+		x = 31
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+								name = industrial_bonus
+								bonus = 1.0
+								uses = 5
+								category = industry
+							}
+							add_autonomy_score = {
+    value = -500 
+    localization = EXAMPLE
+}
+		}
+	}
+	focus = {
+			id = "LEB_26" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_24" }
+		x = 29
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_autonomy_score = {
+    value = -1000 
+    localization = EXAMPLE
+}random_owned_controlled_state = { 
+								limit = {
+										free_building_slots = {
+												building = industrial_complex
+												size > 4
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = industrial_complex
+																				size > 4
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+										type = industrial_complex
+										level = 4
+										instant_build = yes
+									}
+							}
+		}
+	}
+		focus = {
+			id = "LEB_27" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_26" }
+		x = 29
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+					add_autonomy_score = {
+    value = -500 
+    localization = EXAMPLE
+}
+			add_manpower = 100000
+		}
+	}
+			focus = {
+			id = "LEB_28" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_25" }
+		x = 31
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_autonomy_score = {
+    value = -500 
+    localization = EXAMPLE
+}
+			add_tech_bonus = {
+								name = land_doctrine_bonus
+								bonus = 1.0
+								uses = 4
+								category = land_doctrine
+							}
+		}
+	}
+				focus = {
+			id = "LEB_29" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_28" }
+		x = 31
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+					add_autonomy_score = {
+    value = -2000 
+    localization = EXAMPLE
+}
+		}
+	}
+					focus = {
+			id = "LEB_30" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_27" }
+		x = 29
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		
+		completion_reward = {
+					add_autonomy_score = {
+    value = -700 
+    localization = EXAMPLE
+}
+			random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+										type = arms_factory
+										level = 4
+										instant_build = yes
+									}
+							} 
+		}
+	}
+					focus = {
+			id = "LEB_31" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_23" }
+		x = 26
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {    
+																	
+					add_stability = 0.2
+		}
+	}
+					focus = {
+			id = "LEB_32" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_23" }
+		x = 24
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = {
+								ideology = liberalism
+								popularity = 0.10
+														add_stability = 0.10
+						add_war_support = 0.05
+							} 
+		}
+	}
+						focus = {
+			id = "LEB_33" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_32" }
+		x = 24
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.10
+			add_manpower = 1200000
+		}
+	}
+							focus = {
+			id = "LEB_34" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_31" }
+		x = 26
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+add_autonomy_score = {
+    value = 3000
+    localization = EXAMPLE
+}  add_political_power = 200
+		}
+	}
+								focus = {
+			id = "LEB_35" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_33" }
+		x = 24
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.30
+			add_popularity = {
+								ideology = liberalism
+								popularity = 0.20
+														
+						
+							} 
+		}
+	}
+								focus = {
+			id = "LEB_36" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_34" }
+		x = 26
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+add_autonomy_score = {
+    value = 4000 
+    localization = EXAMPLE
+}add_political_power = 350
+	}
+	}
+									focus = {
+			id = "LEB_37" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_7" }
+		x = 21
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.20
+			add_manpower = 50000
+		}
+	}
+										focus = {
+			id = "LEB_38" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_7" }
+		x = 19
+		y = 2
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = -150000
+			add_stability = -0.20
+		}
+	}
+											focus = {
+			id = "LEB_39" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_38" }
+		x = 19
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = -10000
+		}
+	}
+												focus = {
+			id = "LEB_40" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_37" }
+		x = 21
+		y = 3
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+									random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = industrial_complex
+												size > 4
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = industrial_complex
+																				size > 4
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 3
+								add_building_construction = {
+										type = industrial_complex
+										level = 3
+										instant_build = yes
+									}
+						}	
+		}
+	}
+													focus = {
+			id = "LEB_41" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_40" }
+		x = 21
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+									random_owned_controlled_state = {
+								limit = {
+										free_building_slots = {
+												building = arms_factory
+												size > 5
+												include_locked = yes
+											}
+										OR = {
+												is_in_home_area = yes
+												NOT = {
+														owner = {
+																any_owned_state = {
+																		free_building_slots = {
+																				building = arms_factory
+																				size > 5
+																				include_locked = yes
+																			}
+																		is_in_home_area = yes
+																	}
+															}
+													}
+											}
+									}
+								add_extra_state_shared_building_slots = 4
+								add_building_construction = {
+										type = arms_factory
+										level = 4
+										instant_build = yes
+									}
+							}
+		}
+	}
+														focus = {
+			id = "LEB_42" 
+		icon = GFX_goal_unknown
+		prerequisite = { focus = "LEB_39" }
+		x = 19
+		y = 4
+		cost = 10
+		
+		
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_stability = 0.20
+			add_war_support = 0.50
+		}
+	}
+ 
+	}
+	
